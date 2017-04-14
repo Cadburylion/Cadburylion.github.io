@@ -1,0 +1,58 @@
+* {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*padding can't affect box size*/
+  font-weight: normal;
+  /*border: 1px black solid*/
+}
+
+body {
+  background-color: #D1DBBD;
+}
+
+#wrapper {
+  height: auto;
+  width: 940px;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FCFFF5;
+  border-radius: 70px;
+  border: 1px solid black;
+
+}
+
+#create-new-store {
+  width: 35%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+#home-button {
+  display: block;
+  width: 100px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+h1 {
+  margin: 0 auto;
+  background-color: #D1DBBD;
+  text-align: center;
+  font-size: 5em;
+}
+
+table {
+  width: 65%;
+  font-size: 1.5em;
+  margin: 20px auto;
+}
+
+td {
+  border: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+}

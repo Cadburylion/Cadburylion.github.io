@@ -1,0 +1,186 @@
+/* reset */
+
+* {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*padding can't affect box size*/
+  font-weight: normal;
+  /*border: 1px black solid*/
+}
+
+@font-face {
+  /*font-family: 'Macondo', cursive;*/
+  font-family: 'Indie Flower', cursive;
+  src: url('https://fonts.googleapis.com/css?family=Macondo');
+  src: url('https://fonts.googleapis.com/css?family=Indie+Flower');
+}
+
+html, body {
+  height: 100%;
+  /*font-family: Indie Flower;*/
+  /*size: 3em;*/
+
+  /*background-color: #EFAAAE;*/
+
+  background: url(images/seattle-evening-wheel.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#title {
+  font-family: Indie Flower;
+  font-size: 8em;
+}
+
+#store-information {
+  font-family: verdana;
+  font-size: 3em;
+  border-top: 4px dashed #FA8072;
+}
+
+#pike-pic {
+  border-radius: 50%;
+  width:200px;
+  display: inline;
+  margin: 25px;
+}
+
+#alki-pic{
+  border-radius: 50%;
+  width: 200px;
+  display: inline;
+  margin: 25px;
+}
+
+#capitolhill-pic {
+  border-radius: 50%;
+  width: 200px;
+  display: inline;
+  margin: 25px;
+}
+
+#seatac-pic {
+  border-radius: 50%;
+  width: 200px;
+  display: inline;
+  margin: 25px;
+}
+
+#seattle-center-pic {
+  border-radius: 50%;
+  width: 200px;
+  display: inline;
+  margin: 25px;
+}
+
+#pike {
+  width: 200px;
+  display: inline;
+}
+
+#seattle-center {
+
+}
+
+#alki {
+  display: inline;
+
+}
+
+#locations{
+  display: inline-block;
+  width: auto;
+}
+
+h1 {
+  margin: 0 auto;
+  /*background-color: #D1DBBD;*/
+  text-align: center;
+  font-size: 2em;
+}
+
+h2 {
+  display: inline;
+  width: auto;
+}
+
+p {
+  display: inline;
+  width: auto;
+}
+
+#wrapper {
+  height: auto;
+  width: 940px;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FCFFF5;
+  border-radius: 70px;
+  border: 1px solid black;
+
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.right {
+  float:right;
+}
+
+.left {
+  float: left;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+main {
+  position: relative;
+}
+
+.fish-container {
+  display: block;
+  /*width: 50%;*/
+  margin: auto;
+}
+
+#empty-space {
+  height: 100px;
+}
+
+
+#main-content {
+  border-top: 4px solid salmon;
+  border-right: 4px solid salmon;
+  border-left: 4px solid salmon;
+  border-top-left-radius: 1%;
+  border-top-right-radius: 1%;
+  /*background-color: white;*/
+  height: 100%;
+  width: 70%;
+  margin: auto;
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+
+  /* Opera */
+  background-image: -o-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #EFAAAE));
+
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to bottom, #FFFFFF 0%, #EFAAAE 100%);
+}
