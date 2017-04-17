@@ -29,7 +29,7 @@ CookieShop.prototype.getCookiesPerHour = function(){
 };
 
 CookieShop.prototype.getCookies = function(maxCust, minCust, avgCookie){
-  var cookies = Math.round(Math.floor(Math.random()*(maxCust-minCust + 1) + minCust) * avgCookie) + 1;
+  var cookies = Math.round(Math.floor(Math.random()*(maxCust-minCust + 1) + minCust) * avgCookie);
   this.totalCookies += cookies;
   return cookies;
 };
@@ -115,11 +115,11 @@ function handleStoreCreateSubmit(event){
   // grab the values
   var name = form.storeName.value;
   // console.log('store name', name);
-  var maximumCustomers = form.storeMaximumCustomers.value;
+  var maximumCustomers = parseInt(form.storeMaximumCustomers.value);
   // console.log('maximum customers', maximumCustomers);
-  var minimumCustomers = form.storeMinimumCustomers.value;
+  var minimumCustomers = parseInt(form.storeMinimumCustomers.value);
   // console.log('minimum customers', minimumCustomers);
-  var averageCookies = form.storeAverageCookies.value;
+  var averageCookies = parseInt(form.storeAverageCookies.value);
   // console.log('average cookies', averageCookies);
 
   var store = new CookieShop(name, minimumCustomers, maximumCustomers, averageCookies);

@@ -8,13 +8,14 @@
 }
 
 body {
-  background-color: #D1DBBD;
+  background-color: #F3FFE2;
+
 }
 
 #wrapper {
   height: auto;
   width: 940px;
-  max-width: 70%;
+  /*max-width: 70%;*/
   margin: 0 auto;
   padding: 20px;
   background-color: #FCFFF5;
@@ -38,7 +39,7 @@ body {
 
 h1 {
   margin: 0 auto;
-  background-color: #D1DBBD;
+  background-color: #F3FFE2;
   text-align: center;
   font-size: 5em;
 }
@@ -55,4 +56,8 @@ td {
 
 a {
   text-decoration: none;
+}
+
+p {
+  font-family: verdana;
 }

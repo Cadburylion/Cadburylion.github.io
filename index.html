@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Hello world </title>
+  <title> Pat's Salmon Cookies </title>
+  <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  <div id="empty-space"></div>
+  <div class="empty-space"></div>
+  <aside id="contact-us">
+    <img src="images/fish.jpg" alt="cartoon fish" id="cartoon-fish"/>
+    <p class="center">Contact us!</p>
+    <p class="center">1(555)555-5555</p>
+    <p class="center small">patssalmon@cookies.com</p>
+    <p class="center emphasize">Open 6am-8pm</p>
+  </aside>
 
   <main id="main-content">
 
@@ -14,29 +24,52 @@
     </div>
 
     <div id="store-information">
-      <h1>We're where you are!</h1>
+      <h1 id="header-paragraph">Get your seafood sweetfood at any of our five locations!</h1>
     </div>
-    <div id="pike">
-      <img src="images/pike-place.jpg" alt="pike place market, credit: https://fineartamerica.com/featured/pike-place-market-joan-minchak.html" id="pike-pic"/>
+    <div id="store-locations">
+      <img src="images/pike-place.jpg" alt="pike place market, credit: https://fineartamerica.com/featured/pike-place-market-joan-minchak.html" class="round-pic"/>
+
+
+      <img src="images/capitolhill.jpg" alt="capitol hill, credit: http://www.city-data.com/picfilesv/picv24645.php" class="round-pic" />
+
+
+      <img src="images/seatac.jpg" alt="seatac, credit: http://www.dazzlingplaces.com/Seattle/SeattleTravelSeaTacAirportMasterFolder/SeattleTravelSeaTacAirportPageTwo.html" class="round-pic" />
+
+
+      <img src="images/seattle-center.jpg" alt="seattle center, credit: http://www.futurefiftyseattle.org/" class="round-pic" />
+
+      <img src="images/alki.jpg" alt="view from alki beach, credit: https://fineartamerica.com/art/seattle" class="round-pic"/>
+
+      <!-- </div> -->
+      <p id="pike-info" class="emphasize">Pike and First</p>
+      <p id="caphill-info" class="emphasize">Capitol Hill</p>
+      <p id="seatac-info" class="emphasize">SeaTac</p>
+      <p id="seacenter-info" class="emphasize">Seattle Center</p>
+      <p id="alki-info" class="emphasize">Alki</p>
+    </div>
+    <div id="family-pic-box">
+      <img src="images/family.jpg" alt="family in kitchen with jar of cookies" id="family-pic" />
+      <p class="center emphasize">Pat's Salmon Cookies are a healthier snack for the whole family to enjoy!</p>
+    </div>
+    <div id="diy">
+      <p id="diy-paragraph"><img src="images/cutter.jpeg" align="left" id="cutter-pic"/>And with our custom cookie cutter and salmon cookie recipe book, you can make your own salmon cookie treats at home!<img src="images/frosted-cookie.jpg" id="frosted-cookie-pic"/></p>
     </div>
 
+    <div id="shirt">
+      <p id="shirt-paragraph"><img src="images/shirt.jpg" alt="shirt with fish picture on front" align="left" id="shirt-pic"/>Come in and pick up one of Pat's Salmon Shirts! With each purchase we'll donate $5 to the Estuary and Salmon Restoration Program, to help ensure salmon continue to thrive in the Puget Sound for generations to come.</p>
+    </div>
 
-    <img src="images/capitolhill.jpg" alt="capitol hill, credit: http://www.city-data.com/picfilesv/picv24645.php" id="capitolhill-pic" />
-
-
-    <img src="images/seatac.jpg" alt="seatac, credit: http://www.dazzlingplaces.com/Seattle/SeattleTravelSeaTacAirportMasterFolder/SeattleTravelSeaTacAirportPageTwo.html" id="seatac-pic" />
-
-
-    <img src="images/seattle-center.jpg" alt="seattle center, credit: http://www.futurefiftyseattle.org/" id="seattle-center-pic" />
+    <div id="chinook">
+      <p id="coming-soon"><img src="images/chinook.jpg" align="right" id="chinook-pic"/>Coming soon: cookies made with real Chinook!</p>
 
 
-    <img src="images/alki.jpg" alt="view from alki beach, credit: https://fineartamerica.com/art/seattle" id="alki-pic"/>
-
+    <footer id="footer">
+      <small id="copywrite-left">&copy; Copyright 2017, Pat's Salmon Cookies</small>
+      <p id="footer-about"></p>
+    </footer>
+  </main>
+  <div class="empty-space">
   </div>
-
-</main>
-<div id="app"></div>
-<link href="style.css" rel="stylesheet" type="text/css"/>
 
 </body>
 </html>
