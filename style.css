@@ -1,255 +1,113 @@
 * {
-  width: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /*padding can't affect box size*/
-  /*font-weight: normal;*/
-  /*border: 1px black solid*/
-  font-family: 'Bubblegum Sans', cursive;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
+  background: beige;
 }
 
-body {
+.survey-question {
   margin: 0 auto;
-  background: url(images/seattle-evening-wheel.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-}
-
-#contact-us {
-  height: 335px;
-  width: 200px;
-  position: fixed;
-  top: 100px;
-  right: 110px;
-  background-color: white;
-  border: 2px solid salmon;
-  border-radius: 1%;
-}
-
-#header-paragraph{
-  font-family:  font-family: 'Bubblegum Sans', cursive;
-}
-
-#cartoon-fish {
-  height: 200px;
-  width: 196px;
-  margin-bottom: 25px;
-}
-
-#store-information {
-  font-family: verdana;
-  font-size: 2em;
-  border-top: 4px solid #FA8072;
-}
-
-#store-locations {
-  padding-bottom: 15px;
-  border-bottom: 4px solid #FA8072;
-}
-
-#family-pic-box {
-  padding-bottom: 4px;
-}
-
-#diy {
-  border-top: 4px solid salmon;
-  padding-top: 8px;
-}
-
-#diy-paragraph {
-  font-size: 2em;
-}
-
-#cutter-pic {
-  display: inline-block;
-  width: 49%;
-}
-
-#frosted-cookie-pic {
-  display: inline-block;
-  width: 49%;
-  margin-top: 22px;
-  margin-left: 10px;
-}
-
-#shirt {
-  border-top: 4px solid salmon;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-#shirt-pic {
-  width: 49%;
-}
-
-#shirt-paragraph {
-  font-size: 2.5em;
-}
-
-#chinook {
-  background-color: white;
-  border-top: 4px solid salmon;
-  border-bottom: 4px solid salmon;
-}
-
-#chinook-pic {
-  width: 400px;
-
-}
-
-#coming-soon {
-  font-size: 3em;
-}
-
-#footer {
-  position:fixed;
-  right:0px;
-  bottom:0px;
-  height:30px;
-  width:100%;
-  background:#D0D6FB;
+  margin-top: 200px;
   text-align: center;
-  border-top: 4px solid salmon;
+  font-size: 4em;
+  font-family: 'Lobster Two', cursive;
+  letter-spacing: 2px;
 }
 
-#pike {
-  width: 200px;
-  display: inline;
-}
-
-#seattle-center {
-
-}
-
-#alki {
-  display: inline;
-
-}
-
-#locations{
-  display: inline-block;
-  width: auto;
-}
-
-h1 {
+#surveyImageContainer {
   margin: 0 auto;
-  text-align: center;
-  font-size: 2em;
+  margin-top: 100px;
+  width: 760px;
 }
 
-h2 {
-  display: inline-block;
-  width: auto;
-}
-
-p {
-  display: inline-block;
-  width: auto;
-}
-
-a {
-  text-decoration: none;
-}
-
-.right {
-  float:right;
-}
-
-.left {
-  float: left;
-}
-
-.clear-fix {
-  clear: both;
-}
-
-.center {
+#canvas-div {
   margin: 0 auto;
-  text-align: center;
-  display: block;
-  font-size: 1.5em;
-}
-
-.emphasize {
-  font-style: italic;
-}
-
-.round-pic {
-  border-radius: 50%;
-  width:15%;
-  display: inline-block;
-  margin: 2%;
-}
-
-.small {
-  font-size: 1em;
-}
-
-.empty-space {
-  height: 100px;
-}
-
-#pike-info {
-margin-left: 50px;
-}
-
-#caphill-info {
-margin-left: 105px;
-}
-
-#seatac-info {
-margin-left: 128px;
-}
-
-#seacenter-info {
-margin-left: 122px;
-}
-
-#alki-info {
-margin-left: 125px;
-width: auto;
-}
-
-.loc-time {
-margin: 0 auto;
-width: auto;
-}
-
-
-#main-content {
-  font-family: 'Bubblegum Sans', cursive;
-  border-top: 4px solid salmon;
-  border-right: 4px solid salmon;
-  border-left: 4px solid salmon;
-  border-top-left-radius: 1%;
-  border-top-right-radius: 1%;
-  /*background-color: white;*/
-  /*height: 1300px;*/
+  height: 500px;
   width: 960px;
-  margin: auto;
-  overflow: visible;
-  /* IE10 Consumer Preview */
-  background-image: -ms-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+}
 
-  /* Mozilla Firefox */
-  background-image: -moz-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+.image1 {
+  height: 250px;
+  width: 250px;
+  border: 2px solid tan;
+  border-radius: 10%;
+}
 
-  /* Opera */
-  background-image: -o-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+.image1:hover {
+  transform: perspective(2000px) scale(1.3) rotateY(20deg);
+  transition: transform .5s;
+}
 
-  /* Webkit (Safari/Chrome 10) */
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #EFAAAE));
+.image2 {
+  height: 250px;
+  width: 250px;
+  border: 2px solid tan;
+  border-radius: 10%;
+}
 
-  /* Webkit (Chrome 11+) */
-  background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #EFAAAE 100%);
+.image2:hover {
+  transform: scale(1.3);
+  transition: transform .5s;
+}
 
-  /* W3C Markup, IE10 Release Preview */
-  background-imag e: linear-gradient(to bottom, #FFFFFF 0%, #EFAAAE 100%);
+.image3 {
+  height: 250px;
+  width: 250px;
+  border: 2px solid tan;
+  border-radius: 10%;
+}
+
+.image3:hover {
+  transform: perspective(2000px) scale(1.3) rotateY(-20deg);
+  transition: transform .5s;
+}
+
+.hamburger-menu {
+  display: inline-block;
+  margin: 0 auto;
+  height: 50px;
+  width: 100%;
+  /*position: fixed;*/
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.hamburger-menu.hidden{
+  transform: translateY(-20px);
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.hamburger-icon {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+.hamburger-icon div {
+  margin: 0 auto;
+  margin-top: 2px;
+  height: calc(22px / 3);
+  margin-bottom: 2px;
+  background: #D2B48C;
+}
+
+.restart-button {
+  display: inline;
+  width: auto;
+}
+
+.clear-data {
+  display: inline;
+  width: auto;
+}
+
+.buttons {
+  margin: 0 auto;
+  width: 160px;
 }

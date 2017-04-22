@@ -1,0 +1,10 @@
+1. Build a constructor function that creates an object associated with each image.
+2. Write properties in the constructor for the:
+  a)name
+  b)filepath
+  c)times shown
+  d)times clicked
+  e)string used as HTML ID
+3. Code event listeners that invoke the necessary functions.
+4. Turn off the event listeners after 25 selections have been made.
+5. Display a list of the products with votes received with each list item looking like: "3 votes for the Banana Slicer".
