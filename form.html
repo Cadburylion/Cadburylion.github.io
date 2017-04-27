@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='style.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet", type="text/css", href="general.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora|Lobster+Two" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+    <header>
+      <div class="nav-bar">
+        <div class="nav-bar-info">
+          <div class="logo-div">
+            <img src="img/shadow-goat.png" />
+          </div>
+          <h2 class="logo-title">Guardians of the Goats</h2>
+          <ul class="nav-navbar">
+            <li class="active">
+              <a class="nav-home" href="index.html">Home</a>
+            </li>
+            <li>
+              <a class="nav-guardians" href="guardians.html">Guardians</a>
+            </li>
+            <li>
+              <a class="nav-goats" href="goats.html">Goats</a>
+            </li>
+            <li>
+              <a class="nav-forms" href="form.html">Forms</a>
+            </li>
+            <li>
+              <a class="nav-resources" href="resource.html">Resources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class='main'>
+
+      <div class="goat-banner-form">
+        <button id='goat-guardian' class='goatButton'>Goat Guardian</button>
+        <button id='goat-in-need' class='goatButton'>Goat In Need</button>
+      </div>
+
+      <div id="selectform" style='display: none'>
+
+          <div id='goat-div'>
+            <form id='goat-form' style='display: none'>
+              <p class="third"> <label>Goat Name: </label>
+              <input name='nameOfGoat' type='text'</p>
+
+              <p class="third"> <label>Age: </label>
+              <input name='ageOfGoat' type='number'/> </p>
+
+              <p class="third"> <label>Location: </label>
+              <input name='locationOfGoat' type='text' required /> </p>
+
+              <p class="half"> <label>E-Mail: </label>
+              <input name='contactOfGoat' type='text' required /> </p>
+
+              <p class="half"> <label>Image Url: </label>
+              <input name='goatImage' type='url'/> </p>
+
+              <p class="full"> <label>Needs: </label>
+              <textarea name='serviceNeeded' type='text' required></textarea> </p>
+
+              <p> <button class="submit-box" type='submit'> Submit </button> </p>
+            </form>
+          </div>
+
+            <div id='guardian-div'>
+              <form id='goat-guardian-form' style='display: none'>
+                <p class="fourth"> <label> Name: </label> <input name='nameOfGuardian' type='text'/>
+
+                <p class="fourth"> <label> Location: </label> <input name='locationOfGuardian' type='text' placeholder='City and State' />
+
+                <p class="fourth"> <label> E-mail: </label> <input name='contactOfGuardian' type='email' placeholder='Email Address' />
+
+                <p class="fourth"> <label> Upload Picture: </label><input name='guardianImage' type='text' placeholder='Picture URL' />
+
+                <p class="full"> <label> How can you help a goat? </label><textarea name='serviceOffered' type='text' placeholder='How can you help a goat?'></textarea>
+
+                <p> <button class="submit-box" type='submit'> Submit </button>
+              </form>
+            </div>
+        </div>
+      </div>
+</div>
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="img/shadow-goat.png" />
+  </div>
+  <div class="footer-info">
+    <p>Guardian of the Goats</p>
+    <p>gog@gmail.com</p>
+    <p>Seattle, WA</p>
+  </div>
+</footer>
+    <script src='app.js'></script>
+  </body>
+</html>

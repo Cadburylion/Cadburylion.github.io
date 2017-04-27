@@ -1,113 +1,252 @@
 * {
+  width: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
   box-sizing: border-box;
+  /*border: 1px solid black;*/
 }
 
 html, body {
-  height: 100%;
-  background: beige;
+
+    height: auto;
+    width: 100%;
+
 }
 
-.survey-question {
+
+.main {
   margin: 0 auto;
-  margin-top: 200px;
+
+  width: 960px;
+  height: 100% ;
+  /*border: 2px solid blue;*/
+  /*background-color: blue;*/
+}
+
+#selectform {
+  float: left;
+  padding: 20px;
+  background-repeat: no-repeat;
+  font-family: Tahoma, Geneva, sans-serif;
+  background: linear-gradient(to top, #EDEDED, white);
+}
+
+form {
+  position: relative;
+
+}
+
+/*form:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}*/
+
+input {
+width:auto;
+height: 40px;
+padding: 5px;
+  margin-top: 5px;
+}
+
+textarea {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+label {
+  padding-bottom: 20px;
+
+}
+button:active {
+  transform: translate(1px, 1px);
+}
+
+button {
+  width:auto;
+  padding: 20px;
+  /*box-shadow: inset 0 0 10px #000000;*/
+  /*border: 1px inset #b37d00 ;*/
+    border: 1px #333 ;
+  text-decoration: none ;
+  display: inline-block ;
+  background-color: #333;
+  color: White;
+  font-size: 20px;
+
+}
+
+
+.resources-header {
+  font-size: 80px;
   text-align: center;
-  font-size: 4em;
-  font-family: 'Lobster Two', cursive;
-  letter-spacing: 2px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
-#surveyImageContainer {
-  margin: 0 auto;
-  margin-top: 100px;
-  width: 760px;
-}
-
-#canvas-div {
-  margin: 0 auto;
-  height: 500px;
+.rescues {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 960px;
 }
 
-.image1 {
-  height: 250px;
-  width: 250px;
-  border: 2px solid tan;
-  border-radius: 10%;
+.rescue-links {
+  height:320px;
+  width:315px;
+  margin: 0 auto;
+  display: inline-block;
+  border-radius: 17px;
+  text-align:justify;
 }
 
-.image1:hover {
-  transform: perspective(2000px) scale(1.3) rotateY(20deg);
-  transition: transform .5s;
-}
-
-.image2 {
-  height: 250px;
-  width: 250px;
-  border: 2px solid tan;
-  border-radius: 10%;
-}
-
-.image2:hover {
-  transform: scale(1.3);
-  transition: transform .5s;
-}
-
-.image3 {
-  height: 250px;
-  width: 250px;
-  border: 2px solid tan;
-  border-radius: 10%;
-}
-
-.image3:hover {
-  transform: perspective(2000px) scale(1.3) rotateY(-20deg);
-  transition: transform .5s;
-}
-
-.hamburger-menu {
+image {
   display: inline-block;
   margin: 0 auto;
-  height: 50px;
+}
+
+
+a {
+ text-decoration-line: none;
+ text-decoration-color: #595755;
+}
+
+
+.instructions {
+  float: right;
+  width: 400px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+
+.instructions-div {
+  background-color: #F1F1F0;
+  margin-top: 20px;
+  margin-bottom:20px;
+  border-radius: 10px;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+}
+
+.instructions-header {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+iframe {
+  width: 400px;
+  height: 300px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.instructions-ul {
+  list-style-image: url("img/bulletpoints-goatface.jpg");
+  font-family: 'Lobster Two', cursive;
+  font-size: 25px;
+}
+
+.instructions-li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+
+.resources-header, .instructions-header {
+  font-family: 'Lobster Two', cursive;
+  color: #3D3C3A;
+}
+
+.goat-banner-form {
+  background-image: url("img/Funny-Goat-With-Glasses960.jpg");
+  height: 424px;
+
+}
+
+.goatButton {
+  background-color: #333;
+  color: White;
+  position: absolute;
+  font-size: 20px;
+  width: 205px;
+;
+}
+
+
+#goat-guardian {
+ margin-top: 200px;
+}
+
+#goat-in-need {
+  margin-top: 300px;
+}
+
+.third {
+  /*border: 1px solid black;*/
+  display: inline-block;
+  width: calc(100% / 3 );
+  padding: 5px;
+  float: left;
+}
+
+.third input {
   width: 100%;
-  /*position: fixed;*/
-  transition-duration: 1s;
-  transition-timing-function: ease;
+
 }
 
-.hamburger-menu.hidden{
-  transform: translateY(-20px);
-  transition-duration: 1s;
-  transition-timing-function: ease;
+.half {
+  display: inline-block;
+  width: 50%;
+  padding: 5px;
+  float: left;
 }
 
-.hamburger-icon {
-  margin: 0 auto;
-  width: 50px;
-  height: 50px;
+.half input {
+  width: 100%;
 }
 
-.hamburger-icon div {
-  margin: 0 auto;
-  margin-top: 2px;
-  height: calc(22px / 3);
-  margin-bottom: 2px;
-  background: #D2B48C;
+.full {
+  display: inline-block;
+  width: 89%;
+  padding: 5px;
+  float: left;
 }
 
-.restart-button {
-  display: inline;
+.full textarea {
+  height: 100px;
+}
+
+
+
+.submit-box {
+  padding: 15px;
+  float: left;
   width: auto;
+  margin-top: 30px;
+  height: 100px;
 }
 
-.clear-data {
-  display: inline;
-  width: auto;
+.fourth {
+  display: inline-block;
+  width: calc(100% / 4 );
+  padding: 5px;
+  float: left;
 }
 
-.buttons {
-  margin: 0 auto;
-  width: 160px;
+.fourth input {
+  width: 100%;
 }

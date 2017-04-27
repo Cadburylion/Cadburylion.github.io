@@ -1,0 +1,66 @@
+* {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+body {
+  background:url(img/baby-goat-wallpaper.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main {
+  margin: 0 auto;
+  width: 80%;
+  height: 100% ;
+}
+
+.guardian-wrap {
+  position: relative;
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+  margin-left: 55px;
+  margin-top: 30px;
+}
+
+.guardian-wrap img {
+  position: absolute;
+  display: inline;
+  margin-left: 100px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid black;
+  z-index: 1;
+}
+
+.info-wrap {
+  height: 65%;
+  width: 100%;
+  margin-top: 20%;
+  display: inline-block;
+  background-color: beige;
+  border: 2px solid black;
+  overflow: auto;
+  opacity: .89;
+}
+
+.info-wrap:hover {
+  opacity: 1;
+}
+
+.info-wrap p {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.name {
+  margin-top: 40px;
+  font-weight: bold;
+}

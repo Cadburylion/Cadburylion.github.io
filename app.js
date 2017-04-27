@@ -1,225 +1,153 @@
 'use strict';
 
-var totalClicks = 0;
-// image object constructor
-function SurveyImage(name, filename) {
-  this.name = name;
-  this.filename = './img/' + filename;
-  this.shownAmount = 0;
-  this.clickAmount = 0;
-  this.chosenPercent = 0;
-}
+var guardians = [];
 
-// return random images array index
-function selectRandomImagesIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
-// calculates percentage of times an item was picked when shown
-function getPercentage(click, shown){
-  return click / shown * 100;
-}
-
-var imagesOnSecondPreviousScreen = [];
-var imagesOnPreviousScreen = [];
-var imagesOnScreen = [];
-
-var images = [
-  new SurveyImage('bag', 'bag.jpg'),
-  new SurveyImage('banana', 'banana.jpg'),
-  new SurveyImage('bathroom-media-stand', 'bathroom.jpg'),
-  new SurveyImage('boots', 'boots.jpg'),
-  new SurveyImage('breakfast', 'breakfast.jpg'),
-  new SurveyImage('bubblegum', 'bubblegum.jpg'),
-  new SurveyImage('chair', 'chair.jpg'),
-  new SurveyImage('cthulhu', 'cthulhu.jpg'),
-  new SurveyImage('dog-duck', 'dog-duck.jpg'),
-  new SurveyImage('dragon', 'dragon.jpg'),
-  new SurveyImage('pen', 'pen.jpg'),
-  new SurveyImage('pet-sweep', 'pet-sweep.jpg'),
-  new SurveyImage('scissors', 'scissors.jpg'),
-  new SurveyImage('shark', 'shark.jpg'),
-  new SurveyImage('sweep', 'sweep.png'),
-  new SurveyImage('tauntaun', 'tauntaun.jpg'),
-  new SurveyImage('unicorn', 'unicorn.jpg'),
-  new SurveyImage('usb-tentacle', 'usb.gif'),
-  new SurveyImage('water-can', 'water-can.jpg'),
-  new SurveyImage('wine-glass', 'wine-glass.jpg'),
+var goats = [
+  new Goat('Duncan', 16, 'Seattle', 'foster', 'duncan@summail.com', 'img/goat-in-glasses.jpg'),
+  new Goat('Ben', 2, 'Redmond', 'transportation', 'J3234@summail.com', 'img/Goat_1.jpg'),
+  new Goat('Heraldo', 5, 'Sammamish', 'rescue', 'Guiar_Boy@summail.com', 'img/Goat_2.jpg'),
+  new Goat('Shyanne', 12, 'Spokane', 'foster', 'Jakes@summail.com', 'img/Goat_3.jpg'),
+  new Goat('Biatress', 3, 'Black Diamond', 'adpotion', 'Yoyoyo@summail.com', 'img/Goat_4.jpg'),
+  new Goat('Heratio', 12, 'Snohomish', 'donation', 'crackler@summail.com', 'img/Goat_5.jpg'),
+  new Goat('Anette', 8, 'Walla Walla', 'housing', 'goatlover@summail.com', 'img/Goat_6.jpg'),
+  new Goat('Madeline', 7, 'Bellingham', 'foster', 'Meghan@summail.com', 'img/Goat_7.jpg'),
+  new Goat('Charles', 1, 'Covington', 'adoption', 'LEROYJENKINS@summail.com', 'img/Goat_8.jpg'),
 ];
 
 try {
-  images = JSON.parse(localStorage.images);
-} catch(error){
-  console.log('something went wrong getting local storage', error);
+  goats=JSON.parse(localStorage.goats);
+} catch (error) {
+  console.log('Summits brrrreeeeken.');
 }
 
-function selectThreeRandomImages(){
-  // objects in imagesOnSecondPreviousScreen added to images array
-  // console.log('select images', imagesOnSecondPreviousScreen);
-  images = images.concat(imagesOnSecondPreviousScreen);
-  // imagesOnSecondPreviousScreen assigned value of objects in imagesOnPreviousScreen
-  imagesOnSecondPreviousScreen = imagesOnPreviousScreen;
-  // imagesOnPreviousScreen assigned value of objects in imagesOnScreen
-  imagesOnPreviousScreen = imagesOnScreen;
-  // clears out imagesOnScreen
-  imagesOnScreen = [];
-  // create a var nextPhoto to keep track of the next Photo we take out of images
-  // splice out a photo object (which removes it from images)
-  var nextImage = images.splice(selectRandomImagesIndex(images), 1);
-  // concat the array returned by splice onto imagesOnScreen
-  imagesOnScreen = imagesOnScreen.concat(nextImage);
-  // repeat two more times to get three images
-  nextImage = images.splice(selectRandomImagesIndex(images), 1);
-  imagesOnScreen = imagesOnScreen.concat(nextImage);
-  nextImage = images.splice(selectRandomImagesIndex(images), 1);
-  imagesOnScreen = imagesOnScreen.concat(nextImage);
+// grab goat form from html and assignin it to var goatForm
+// add event listener
+var goatForm = document.getElementById('goat-form');
+goatForm.addEventListener('submit', handleGoatFormSubmit);
 
+//grab guardian form from html and assign its reference to guardianForm
+//add submit event listener
+var guardianForm = document.getElementById('goat-guardian-form');
+guardianForm.addEventListener('submit', handleGuardianFormSubmit);
 
-  // imagesOnPreviousScreen.concat(imagesOnScreen);
-  return imagesOnScreen;
+// constructor for Goat in need
+function Goat(goatName, goatAge, goatLocation, serviceNeeded, contact, src) {
+  this.goatName = goatName;
+  this.goatAge = goatAge;
+  this.goatLocation = goatLocation;
+  this.serviceNeeded = serviceNeeded;
+  this.contact = contact;
+  this.goatImage = src;
 }
 
-// assign variables to DOM id's
-var firstImage = document.getElementById('image1');
-var secondImage = document.getElementById('image2');
-var thirdImage = document.getElementById('image3');
+// contructor for Goat Guardian
+function Guardian(guardianName, guardianLocation, guardianContact, serviceOffered, src){
+  this.guardianName = guardianName;
+  this.guardianLocation = guardianLocation;
+  this.guardianContact = guardianContact;
+  this.serviceOffered = serviceOffered;
+  this.guardianImage = src;
+}
 
-// add event listeners to DOM id's that invoke handleEventClick when user clicks any image
+// postDefaultGuardians() instantiates new Guardians and pushes them to goats array and saves to local storage
+function postDefaultGuardians(){
+  var defaultGuardians = [
+    new Guardian('Izzy', 'Seattle, WA', 'izzy@lovesdemgoats.com', 'I have never eaten a goat.', 'adorableGoat.jpg'),
+    new Guardian('Evett', 'Seattle, WA', 'evett@hascoolshoes.com', 'I will buy it a porsche', 'adorableGoat.jpg'),
+    new Guardian('Dustin', 'Seattle, WA', 'dustin@mycountertops.com', 'I will ride a goat to the gym', 'adorableGoat.jpg'),
+    new Guardian('Matthew', 'Seattle, WA', 'lions@areawesome.com', 'I will do parkour with them', 'adorableGoat.jpg'),
+    new Guardian('Ben', 'Lynnwood, WA', 'DnD5e@rules.com', 'I will raise your goat as a Bard', 'adorableGoat.jpg'),
+    new Guardian('Duncan', 'Seattle, WA', 'Duncan@donuts.lamejoke.com', 'I teach goats how to hack', 'adorableGoat.jpg'),
+  ];
 
-firstImage.addEventListener('click', handleEventClick);
-secondImage.addEventListener('click', handleEventClick);
-thirdImage.addEventListener('click', handleEventClick);
-
-// Displays three randomly selected images on the index page
-
-function handleEventClick(event){
-  console.log('images', images);
-  totalClicks++;
-  //if the event fired on the firstImage element, increment clickAmount on imagesOnScreen[0]
-  if (firstImage === event.target){
-    imagesOnScreen[0].clickAmount++;
-    //if the event fired on the secondImage element, increment clickAmount on imagesOnScreen[1]
-  } else if (secondImage === event.target){
-    imagesOnScreen[1].clickAmount++;
-    //if the event fired on the thirdImage element, increment clickAmount on imagesOnScreen[2]
-  } else {
-    imagesOnScreen[2].clickAmount++;
+  for (var i = 0; i < defaultGuardians.length; i++){
+    guardians.push(defaultGuardians[i]);
   }
 
-  if (totalClicks === 25){
-    // set the content of the surveyImageContainer element to nothing, erasing it
-    var surveyImageContainer = document.getElementById('surveyImageContainer');
-    surveyImageContainer.textContent = '';
-    images = images.concat(imagesOnSecondPreviousScreen, imagesOnPreviousScreen, imagesOnScreen);
+  try {
+    // localStorage.guardians = JSON.stringify(guardians);
+    guardians = JSON.parse(localStorage.gaurdians);
+  } catch (error){
+    console.log('something went wrong!', error);
+  }
+}
 
-    var heading = document.getElementById('heading');
-    heading.textContent = 'Your results!';
+postDefaultGuardians();
 
-    displayMetrics();
 
-    try {
-      localStorage.images = JSON.stringify(images);
-    } catch(error){
-      console.log('something went wrong', error);
+function handleGoatFormSubmit(event) {
+  event.preventDefault();
+  var goatForm = event.target;
+
+  // grab input data and assign to variables
+  var nameOfGoat = goatForm.nameOfGoat.value;
+  var ageOfGoat = goatForm.ageOfGoat.value;
+  var locationOfGoat = goatForm.locationOfGoat.value;
+  var contactOfGoat = goatForm.contactOfGoat.value;
+  var serviceNeeded = goatForm.serviceNeeded.value;
+  var goatImage = goatForm.goatImage.value;
+  // storing the value of the input in an empty array of the constructor
+  var addGoat = new Goat(nameOfGoat, ageOfGoat, locationOfGoat, contactOfGoat, serviceNeeded, goatImage);
+  goats.push(addGoat);
+
+  try {
+    localStorage.goats = JSON.stringify(goats);
+  } catch (error){
+    console.log('something went wrong!', error);
+  }
+
+  goatForm.reset();
+}
+
+// handleGuardianFormSubmit invokes on form submit event
+function handleGuardianFormSubmit(event) {
+  event.preventDefault();
+  var guardianForm = event.target;
+
+  //grab input data and assign to variables
+  var nameOfGuardian = guardianForm.nameOfGuardian.value;
+  var locationOfGuardian = guardianForm.locationOfGuardian.value;
+  var contactOfGuardian = guardianForm.contactOfGuardian.value;
+  var serviceOffered = guardianForm.serviceOffered.value;
+  var guardianImage = guardianForm.guardianImage.value;
+
+  // instantiate new Guardian using form values with Guardian constructor and push to guardians array
+  var addGuardian = new Guardian(nameOfGuardian, locationOfGuardian, contactOfGuardian, serviceOffered, guardianImage);
+  guardians.push(addGuardian);
+
+
+  try {
+    localStorage.guardians = JSON.stringify(guardians);
+  } catch (error){
+    console.log('something went wrong!', error);
+  }
+  guardianForm.reset();
+}
+
+
+var goatInNeedButton = document.getElementById('goat-in-need');
+var goatGuardianButton = document.getElementById('goat-guardian');
+
+goatInNeedButton.addEventListener('click', showForm);
+goatGuardianButton.addEventListener('click', showForm);
+
+function showForm(event) {
+  if (goatGuardianButton === event.target) {
+    selectform.style.display = 'block';
+    if (guardianForm.style.display === 'block') {
+      guardianForm.style.display = 'none';
+
     }
-  }
-
-  //invoke selectThreeRandomImages to get 3 random objects into imagesOnScreen array
-  selectThreeRandomImages();
-  //populate img elements on HTML with 3 random images
-  firstImage.src = imagesOnScreen[0].filename;
-  imagesOnScreen[0].shownAmount++;
-  secondImage.src = imagesOnScreen[1].filename;
-  imagesOnScreen[1].shownAmount++;
-  thirdImage.src = imagesOnScreen[2].filename;
-  imagesOnScreen[2].shownAmount++;
-}
-
-//populate page with three random images on page load
-selectThreeRandomImages();
-firstImage.src = imagesOnScreen[0].filename;
-imagesOnScreen[0].shownAmount++;
-secondImage.src = imagesOnScreen[1].filename;
-imagesOnScreen[1].shownAmount++;
-thirdImage.src = imagesOnScreen[2].filename;
-imagesOnScreen[2].shownAmount++;
-
-// populate Chartjs with data
-function displayMetrics(){
-
-  //invokes percentage calculator with object parameter arguments and updates chosenPercent parameter
-  for (var i = 0; i < images.length; i++){
-    images[i].chosenPercent = getPercentage(images[i].clickAmount, images[i].shownAmount);
-  }
-
-  var data = {
-    labels: [],
-    datasets: [
-      {
-        label: 'click count',
-        data: [],
-        backgroundColor: [],
-      },
-      {
-        label: 'display count',
-        data: [],
-        backgroundColor: [],
-      },
-    ],
-
-  };
-  // generates incremented hsl colors dynamically applied to chart data bars
-  var dataColorStart = 'hsl(';
-  var dataColorEnd = ',100%,40%)';
-  var dataColorEndOpacity = ',100%, 75%)';
-
-  var dataColor = -18;
-  for (var c = 0; c < images.length; c++) {
-    dataColor += 18;
-    data.datasets[0].backgroundColor.push(dataColorStart + dataColor + dataColorEnd);
-    data.datasets[1].backgroundColor.push(dataColorStart + dataColor + dataColorEndOpacity);
-
-  }
-  // dynamically populates chart data arrays
-  var currentImage;
-  for (var j = 0; j < images.length; j++){
-    currentImage = images[j];
-    data.labels.push(currentImage.name);
-    data.datasets[0].data.push(currentImage.clickAmount);
-    data.datasets[1].data.push(currentImage.shownAmount);
-  }
-
-  var ctx = document.getElementById('survey-metrics').getContext('2d');
-
-  new Chart(ctx, {
-    type: 'horizontalBar',
-    data: data,
-    options: {
-      legend: {
-        labels: {
-          boxWidth: 0
-        }
-      },
-    }
-  });
-}
-
-// adds a hamburger menu that has two buttons in it
-var hamburgerMenu = document.getElementById('hamburgerMenu');
-var hamburgerIcon = document.getElementById('hamburgerIcon');
-
-
-hamburgerIcon.addEventListener('click', function(){
-  if(hamburgerMenu.className == 'hamburger-menu hidden') {
-    hamburgerMenu.className = 'hamburger-menu';
-  } else {
-    hamburgerMenu.className = 'hamburger-menu hidden';
+    guardianForm.style.display = 'block';
+    goatForm.style.display = 'none';
+    //gray out this button through css
+    //ungray the other button
+    goatGuardianButton.style.border='';
+  } else if (goatInNeedButton === event.target) {
+    selectform.style.display = 'block';
+    goatForm.style.display = 'block';
+    guardianForm.style.display = 'none';
+    //gray out this button through css
+    //ungray the other button
   }
 }
-);
-
-// sets functionality of clear data button to clear local storage
-var clearLocalStorage = document.getElementById('clear-data');
-clearLocalStorage.addEventListener('click', function(){
-  localStorage.clear();
-  alert('Survey data has been cleared!');
-});

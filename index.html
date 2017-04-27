@@ -1,35 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> BusMall </title>
-    <link rel="stylesheet" style="text/css" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
-  </head>
-  <body>
-    <div class="hamburger-menu hidden" id="hamburgerMenu">
-      <div class="buttons">
-        <input type="button" value="Refresh Page" onClick="window.location.reload()" class="restart-button" />
-        <input type="button" value="Clear Data" class="clear-data" id="clear-data" />
-      </div>
-      <div class="hamburger-icon" id="hamburgerIcon">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <section id="survey">
-      <h1 id="heading" class="survey-question">Which product is most appealing to you?</h1>
-      <div id="surveyImageContainer">
-        <img class ="image1" id="image1" />
-        <img class ="image2" id="image2" />
-        <img class ="image3" id="image3" />
-      </div>
-      <div id="canvas-div">
-      <canvas id="survey-metrics"></canvas>
-    </div>
-    </section>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lora|Lobster+Two" rel="stylesheet">
+  <title> Guardians of the Goats</title>
+  <link rel="stylesheet", type="text/css", href="landing.css" />
+</head>
+    <body>
+      <header>
+        <div class="nav-bar">
+          <div class="nav-bar-info">
+            <div class="logo-div">
+              <img src="img/shadow-goat.png" />
+            </div>
+            <h2 class="logo-title">Guardians of the Goats</h2>
+            <ul class="nav-navbar">
+              <li class="active">
+                <a class="nav-home" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="nav-guardians" href="guardians.html">Guardians</a>
+              </li>
+              <li>
+                <a class="nav-goats" href="goats.html">Goats</a>
+              </li>
+              <li>
+                <a class="nav-forms" href="form.html">Forms</a>
+              </li>
+              <li>
+                <a class="nav-resources" href="resource.html">Resources</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
 
-    <script src="app.js"></script>
+      <h1 class="video-logo">
+        Guardians of the Goats
+      </h1>
+      <div class="container-fluid adjustedHeight">
+        <div class="video-container">
+          <video autoplay loop class="fillWidth">
+            <source src="video/Go-Goat.mp4" type="video/mp4" /> Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+          <div class="poster hidden">
+            <img src="video/Go-Goat.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <h1 class="mission-statement"> Mission Statement </h1>
+        <content class="content">
+          <p> When we first came up with the idea for Guardians of the Goats, our goal was to create a place to connect goat advocates throughout the United States. Now, it's also a place to find goats in need of care or rescue in specific locations. We want to make it easier for people who know of or have goats in need of care to connect with those are able to help.</p>
+          <p> All over the world goats are abused, sold for slaughter, discarded, and abandoned because of neurological disorders or physical deformities. At Guardians of the Goats we care about all goats, and want to provide love and care for all that we can.</p>
+
+          <h2 class="about-us"> Who we are </h2>
+
+          <p>We are a group of friends who met through volunteering at several different goat rescues in Washington State over the last few years. Our love for goats brought us to each other, and our passion for protecting and caring for them ignited a spark in our hearts that lit the fire of Guardians of the Goats. Saving one goat makes this entire project worth all of the work we put into it to get it off the ground.</p>
+        </content>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-logo">
+          <img src="img/shadow-goat.png" />
+        </div>
+        <div class="footer-info">
+          <p>Guardian of the Goats</p>
+          <p>gog@gmail.com</p>
+          <p>Seattle, WA</p>
+        </div>
+      </footer>
+    </main>
+    <script src="landing.js"></script>
   </body>
-</html>
+  </html>
