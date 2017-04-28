@@ -5,8 +5,8 @@
     <link rel="stylesheet", type="text/css", href="general.css" />
     <link href="https://fonts.googleapis.com/css?family=Lora|Lobster+Two" rel="stylesheet">
   </head>
-  <body>
-    <div class="main">
+  <body id="form-background">
+    <div id="main">
     <header>
       <div class="nav-bar">
         <div class="nav-bar-info">
@@ -25,7 +25,7 @@
               <a class="nav-goats" href="goats.html">Goats</a>
             </li>
             <li>
-              <a class="nav-forms" href="form.html">Forms</a>
+              <a class="nav-forms" href="form.html">Join Us</a>
             </li>
             <li>
               <a class="nav-resources" href="resource.html">Resources</a>
@@ -34,6 +34,11 @@
         </div>
       </div>
     </header>
+    <!-- <div class='clear-float'></div> -->
+
+    <div class="resources-header"> Join Our Community </div>
+    <h3 class='form-info'> Fill out a form to list a goat that needs help, or become a guardian. </h3>
+    <h3 class='form-info'> A Goat in need, deserves a Guardian indeed! </h3>
     <div class='main'>
 
       <div class="goat-banner-form">
@@ -45,47 +50,51 @@
 
           <div id='goat-div'>
             <form id='goat-form' style='display: none'>
-              <p class="third"> <label>Goat Name: </label>
-              <input name='nameOfGoat' type='text'</p>
 
-              <p class="third"> <label>Age: </label>
-              <input name='ageOfGoat' type='number'/> </p>
+              <p class="third"> <label>Goat's Name </label>
+              <input name='nameOfGoat' type='text' placeholder="Goat's Name"> </p>
 
-              <p class="third"> <label>Location: </label>
-              <input name='locationOfGoat' type='text' required /> </p>
+              <p class="third"> <label>Age </label>
+              <input name='ageOfGoat' type='number' /> </p>
 
-              <p class="half"> <label>E-Mail: </label>
-              <input name='contactOfGoat' type='text' required /> </p>
+              <p class="third"> <label>Location </label>
+              <input name='locationOfGoat' type='text' maxlength='15' required  placeholder='City and State'/> </p>
 
-              <p class="half"> <label>Image Url: </label>
-              <input name='goatImage' type='url'/> </p>
+              <p class="half"> <label>E-Mail </label>
+              <input name='contactOfGoat' type='text' maxlength='15' required  placeholder='For example : goat@gmail.com' /> </p>
 
-              <p class="full"> <label>Needs: </label>
-              <textarea name='serviceNeeded' type='text' required></textarea> </p>
+              <p class="half"> <label>Image Url </label>
+              <input name='goatImage' type='url' placeholder="Please type in image's URL"/> </p>
 
-              <p> <button class="submit-box" type='submit'> Submit </button> </p>
+              <p class="full"> <label>Needs </label>
+
+              <textarea name='serviceNeeded' type='text' maxlength='15' required placeholder='Please specify what this goat needs.'></textarea> </p>
+
+              <p><button class="submit-box" type='submit' onclick="window.location.href='goats.html'"> Submit </button></p>
             </form>
           </div>
 
             <div id='guardian-div'>
               <form id='goat-guardian-form' style='display: none'>
-                <p class="fourth"> <label> Name: </label> <input name='nameOfGuardian' type='text'/>
+                <p class="fourth"> <label> Guardian's Name </label> <input name='nameOfGuardian' type='text' placeholder='First Name and Last Name'/> </p>
 
-                <p class="fourth"> <label> Location: </label> <input name='locationOfGuardian' type='text' placeholder='City and State' />
+                <p class="fourth"> <label> Location </label> <input name='locationOfGuardian' type='text' placeholder='City and State' /> </p>
 
-                <p class="fourth"> <label> E-mail: </label> <input name='contactOfGuardian' type='email' placeholder='Email Address' />
+                <p class="fourth"> <label> E-mail </label> <input name='contactOfGuardian' type='email' placeholder='For example : goat@gmail.com' /> </p>
 
-                <p class="fourth"> <label> Upload Picture: </label><input name='guardianImage' type='text' placeholder='Picture URL' />
+                <p class="fourth"> <label> Upload Picture </label> <input name='guardianImage' type='text' placeholder="Please type in image's URL"/> </p>
 
-                <p class="full"> <label> How can you help a goat? </label><textarea name='serviceOffered' type='text' placeholder='How can you help a goat?'></textarea>
+                <p class="full"> <label> How can you help a goat? </label>
+                  <textarea name='serviceOffered' type='text' placeholder="Please specify what assistance you can give to our goats" required > </textarea> </p>
 
-                <p> <button class="submit-box" type='submit'> Submit </button>
+                <p> <button class="submit-box" type='submit' onclick="window.location.href='guardians.html'"> Submit </button> </p>
               </form>
             </div>
         </div>
       </div>
 </div>
-<footer class="footer">
+<div class='clear-float'></div>
+<footer id="form-footer">
   <div class="footer-logo">
     <img src="img/shadow-goat.png" />
   </div>

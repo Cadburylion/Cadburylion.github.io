@@ -3,25 +3,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /*border: 1px solid black;*/
 }
 
-html, body {
+html, .resource-body {
+  height: auto;
+  width: 100%;
+  background-color: #B6D6D4;
+}
 
-    height: auto;
-    width: 100%;
-
+#main {
+  margin-bottom: 200px;
 }
 
 
 .main {
   margin: 0 auto;
-
-  width: 960px;
-  height: 100% ;
-  /*border: 2px solid blue;*/
-  /*background-color: blue;*/
+  width: 80%;
+  height: auto;
 }
+
+/*.main-resources {
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+}*/
 
 #selectform {
   float: left;
@@ -29,32 +34,18 @@ html, body {
   background-repeat: no-repeat;
   font-family: Tahoma, Geneva, sans-serif;
   background: linear-gradient(to top, #EDEDED, white);
+  box-shadow: inset 0 0 10px #000;
 }
 
 form {
   position: relative;
-
 }
-
-/*form:before {
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 15px;
-  left: 10px;
-  width: 50%;
-  top: 80%;
-  max-width:300px;
-  background: #777;
-  box-shadow: 0 15px 10px #777;
-  transform: rotate(-3deg);
-}*/
 
 input {
 width:auto;
 height: 40px;
 padding: 5px;
-  margin-top: 5px;
+margin-top: 5px;
 }
 
 textarea {
@@ -73,39 +64,93 @@ button:active {
 button {
   width:auto;
   padding: 20px;
-  /*box-shadow: inset 0 0 10px #000000;*/
-  /*border: 1px inset #b37d00 ;*/
-    border: 1px #333 ;
+  box-shadow: inset 0 0 60px #000000;
+  border: 1px inset #b37d00 ;
+  border: 1px #333 ;
   text-decoration: none ;
   display: inline-block ;
   background-color: #333;
   color: White;
   font-size: 20px;
-
 }
 
-
-.resources-header {
+#resources-header {
   font-size: 80px;
   text-align: center;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 62px;
+  padding-bottom: 19px;
+  color: #3D3C3A;
+  text-shadow: 2px 0 black;
+  letter-spacing: 1px;
+  font-weight:bold;
+}
+
+#resources-header, .instructions-header {
+  font-family: 'Lobster Two', cursive;
+}
+
+.guardians-header {
+ font-size: 80px;
+ text-align: center;
+ padding-top: 75px;
+ padding-bottom: 75px;
+ font-family: 'Lobster Two', cursive;
+ color: #3D3C3A;
+ text-shadow: 2px 0 black;
+ letter-spacing: 1px;
+}
+
+.resources-header {
+  letter-spacing: 1px;
+  text-shadow: 2px 0 black;
+  font-size: 80px;
+  text-align: center;
+  padding-top: 138px;
+  padding-bottom: 19px;
+  font-weight: bold;
+}
+
+.resource-description {
+  text-align: center;
+  color: #3D3C3A;
 }
 
 .rescues {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 960px;
+  margin-top: 55px;
+  width: 100%;
 }
 
 .rescue-links {
   height:320px;
   width:315px;
-  margin: 0 auto;
+  margin-left: 0
+  margin-right: 0
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
   display: inline-block;
+  box-sizing: border-box;
+  border: 3px solid #333;
   border-radius: 17px;
   text-align:justify;
+
+}
+
+.rescue-links-middle {
+  height:320px;
+  width:315px;
+  margin-left: 46px;
+  margin-right: 46px;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 3px solid #333;
+  border-radius: 17px;
+  text-align:justify;
+
 }
 
 image {
@@ -113,12 +158,10 @@ image {
   margin: 0 auto;
 }
 
-
 a {
  text-decoration-line: none;
  text-decoration-color: #595755;
 }
-
 
 .instructions {
   float: right;
@@ -127,11 +170,10 @@ a {
   margin-top: 20px;
 }
 
-
 .instructions-div {
   background-color: #F1F1F0;
   margin-top: 20px;
-  margin-bottom:20px;
+  margin-bottom:50px;
   border-radius: 10px;
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
@@ -144,18 +186,18 @@ a {
   margin-top: 30px;
   margin-bottom: 30px;
   padding-top: 30px;
+   text-shadow: 2px 0 black;
 }
 
 iframe {
   width: 400px;
   height: 300px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin-left: 90px;
+  margin-bottom: 50px;
 }
 
 .instructions-ul {
-  list-style-image: url("img/bulletpoints-goatface.jpg");
-  font-family: 'Lobster Two', cursive;
+  list-style-image: url("img/shadow-goat.png");
   font-size: 25px;
 }
 
@@ -163,8 +205,9 @@ iframe {
   margin-top: 20px;
   margin-bottom: 20px;
   color: black;
+  display:block;
+  text-align: left;
 }
-
 
 .resources-header, .instructions-header {
   font-family: 'Lobster Two', cursive;
@@ -172,9 +215,13 @@ iframe {
 }
 
 .goat-banner-form {
-  background-image: url("img/Funny-Goat-With-Glasses960.jpg");
+  background-image: url("img/goat-with-glasses1.jpg");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-size: cover;
+  min-width: 600px;
   height: 424px;
-
+  margin-top: 55px;;
 }
 
 .goatButton {
@@ -183,9 +230,7 @@ iframe {
   position: absolute;
   font-size: 20px;
   width: 205px;
-;
 }
-
 
 #goat-guardian {
  margin-top: 200px;
@@ -205,7 +250,6 @@ iframe {
 
 .third input {
   width: 100%;
-
 }
 
 .half {
@@ -221,7 +265,7 @@ iframe {
 
 .full {
   display: inline-block;
-  width: 89%;
+  width: 88%;
   padding: 5px;
   float: left;
 }
@@ -229,8 +273,6 @@ iframe {
 .full textarea {
   height: 100px;
 }
-
-
 
 .submit-box {
   padding: 15px;
@@ -249,4 +291,37 @@ iframe {
 
 .fourth input {
   width: 100%;
+}
+
+.clear-float {
+  clear: both;
+}
+
+#form-footer {
+  max-height: 126px;
+  background-color: #333;
+  color: white;
+}
+.spacer {
+  height: 20px;
+  margin-bottom: 56px;
+}
+
+.form-info {
+  text-align: center;
+  color: #3D3C3A;
+}
+
+.infoDiv {
+  overflow: auto;
+}
+
+
+#selectform {
+  margin-bottom: 20px;
+}
+
+
+#form-background {
+  background-color: white;
 }
