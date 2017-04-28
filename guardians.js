@@ -20,12 +20,12 @@ function Guardian(guardianName, guardianLocation, guardianContact, serviceOffere
 
 function postDefaultGuardians(){
   var defaultGuardians = [
-    new Guardian('Izzy', 'Seattle, WA', 'izzy@lovesdemgoats.com', 'I can adopt a goat.', 'Clipboard06.jpg'),
-    new Guardian('Evette', 'Seattle, WA', 'evette@hascoolshoes.com', 'I can sponsor a goat.', 'Clipboard02.jpg'),
-    new Guardian('Dustin', 'Seattle, WA', 'dustin@mycountertops.com', 'I can donate sweaters.', 'Clipboard03.jpg'),
-    new Guardian('Matthew', 'Seattle, WA', 'lions@areawesome.com', 'I can adopt a goat.', 'Clipboard04.jpg'),
-    new Guardian('Ben', 'Lynnwood, WA', 'DnD5e@rules.com', 'I can transport to appointments.', 'Clipboard05.jpg'),
-    new Guardian('Duncan', 'Seattle, WA', 'Duncan@donuts.lamejoke.com', 'I can sponsor a goat.', 'Clipboard01.jpg'),
+    new Guardian('Izzy', 'Seattle, WA', 'izzy@lovesdemgoats.com', 'I can adopt a goat.', 'img/Izzy.jpg'),
+    new Guardian('Evette', 'Seattle, WA', 'evette@hascoolshoes.com', 'I can sponsor a goat.', 'img/Evette.png'),
+    new Guardian('Dustin', 'Seattle, WA', 'dustin@mycountertops.com', 'I can donate sweaters.', 'img/Dustin.jpg'),
+    new Guardian('Matthew', 'Seattle, WA', 'lions@areawesome.com', 'I can adopt a goat.', 'img/Matthew.jpg'),
+    new Guardian('Ben', 'Lynnwood, WA', 'DnD5e@rules.com', 'I can transport to appointments.', 'Clipboard02.jpg'),
+    new Guardian('Brian', 'Seattle, WA', 'Brian@sillypants.com', 'I can sponsor a goat.', 'Clipboard08.jpg'),
   ];
 
   for (var i = 0; i < defaultGuardians.length; i++){

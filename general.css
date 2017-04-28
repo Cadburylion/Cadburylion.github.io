@@ -12,6 +12,11 @@
   height: 100% ;
 }
 
+.form-main {
+  margin: 0 auto;
+  height: 100%;
+  background-color: #333;
+}
 
 .resources-main {
   margin: 0 auto;
@@ -19,8 +24,6 @@
   height: auto;
   margin-bottom: 130px;
 }
-
-
 
 a {
   color: white;
@@ -112,3 +115,38 @@ a:hover {
   font-size: .8em;
   padding-bottom: 7px;
 }
+
+.team-photo {
+  height: 300px;
+  width: 250px;
+  display: inline-block;
+  border-radius: 15px;
+  border: 2px solid #333;
+}
+
+.team-photo img {
+  border-radius: 12px;
+}
+
+.team-label {
+  text-align: center;
+  font-size: 2em;
+}
+
+  #team {
+  font-size: 80px;
+  text-align: center;
+  padding-top: 138px;
+  padding-bottom: 75px;
+  font-family: 'Lobster Two', cursive;
+  color: #3D3C3A;
+  text-shadow: 2px 0 black;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+  #team-main {
+    margin-top: 55px;
+    text-align: center;
+    margin-bottom: 227px;
+  }
